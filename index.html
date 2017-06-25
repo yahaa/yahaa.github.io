@@ -142,13 +142,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -264,9 +264,251 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-mongodb使用总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/26/mongodb使用总结/" class="article-date">
+      <time datetime="2017-06-25T16:37:08.000Z" itemprop="datePublished">2017-06-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/26/mongodb使用总结/">mongodb使用总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Mongodb修改为密码登录"><a href="#Mongodb修改为密码登录" class="headerlink" title="Mongodb修改为密码登录"></a>Mongodb修改为密码登录</h3><ol>
+<li>无密码登录到mongodb</li>
+</ol>
+<pre><code>mongo
+</code></pre><ol>
+<li>使用 admin这个数据库</li>
+</ol>
+<pre><code>use admin
+</code></pre><ol>
+<li><p>新建用户</p>
+<pre><code>db.createUser(
+   {
+     user: &quot;userName&quot;,
+     pwd: &quot;password&quot;,
+     roles: [ { role: &quot;userAdmin&quot;, db: &quot;admin&quot; } ]
+   }
+)
+</code></pre></li>
+<li><p>停止 mongodb</p>
+</li>
+</ol>
+<pre><code>sudo service mongod stop
+</code></pre><ol>
+<li>启动验证登录</li>
+</ol>
+<pre><code>sudo mongod --auth
+</code></pre><ol>
+<li>重启　</li>
+</ol>
+<pre><code>sudo service mongod start
+</code></pre><ol>
+<li>密码登录到 mongodb</li>
+</ol>
+<pre><code>mongo --port 27017 -u &quot;userName&quot; -p &quot;password&quot; --authenticationDatabase &quot;admin&quot;
+</code></pre><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>userName,password 为你想要添加的用户名以及密码，并且指定了数据库 admin ,拥有权限: userAdmin</li>
+</ul>
+<ol>
+<li>数据库用户角色：read、readWrite;  </li>
+<li>数据库管理角色：dbAdmin、dbOwner、userAdmin；       </li>
+<li>集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；</li>
+<li>备份恢复角色：backup、restore；</li>
+<li>所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase</li>
+<li>超级用户角色：root<br>// 这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase）</li>
+<li>内部角色：__system</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-编译原理研讨" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/17/编译原理研讨/" class="article-date">
+      <time datetime="2017-05-17T12:23:45.000Z" itemprop="datePublished">2017-05-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/17/编译原理研讨/">编译原理研讨</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h2><p>设有文法　G[S’];</p>
+<ol>
+<li>S’ -&gt; S  </li>
+<li>S -&gt; aS  </li>
+<li>S -&gt; bA  </li>
+<li>A -&gt; dA  </li>
+<li>A -&gt; d</li>
+</ol>
+<ul>
+<li>构造G[S]的LR(0)项目规范族 C={I0,I1,…,In}。</li>
+<li>说明G[S]属于哪一种LR文法，构造相应的LR分析表。</li>
+<li>写出句子aabbd的分析过程。</li>
+</ul>
+<h4 id="解答过程"><a href="#解答过程" class="headerlink" title="解答过程"></a>解答过程</h4><ul>
+<li>文法的项目</li>
+</ul>
+<ol>
+<li>S’ -&gt; .S</li>
+<li>S’ -&gt; S.</li>
+<li>S -&gt; .aS</li>
+<li>S -&gt; a.S</li>
+<li>S -&gt; aS.</li>
+<li>S -&gt; .bA</li>
+<li>S -&gt; b.A</li>
+<li>S -&gt; bA.</li>
+<li>A -&gt; .dA</li>
+<li>A -&gt; d.A</li>
+<li>A -&gt; dA.</li>
+<li>S -&gt; .d</li>
+<li>S -&gt; d.</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-体系结构期末笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/17/体系结构期末笔记/" class="article-date">
+      <time datetime="2017-05-17T06:14:46.000Z" itemprop="datePublished">2017-05-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/17/体系结构期末笔记/">体系结构期末笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-单机文件系统之Linux文件系统" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -800,14 +1042,14 @@ if __name__ == &apos;__main__&apos;:
                 2016-2017 Zihua&#39;blog
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -816,7 +1058,7 @@ if __name__ == &apos;__main__&apos;:
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -833,9 +1075,9 @@ if __name__ == &apos;__main__&apos;:
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

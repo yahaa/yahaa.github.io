@@ -15,15 +15,58 @@
 
 
 
-<meta name="description" content="走吧！勇敢的走下去吧！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zihua!">
-<meta property="og:url" content="http://yoursite.com/tags/学习/index.html">
+<meta name="description" content="Mongodb修改为密码登录
+无密码登录到mongodb
+
+mongo
+
+使用 admin这个数据库
+
+use admin
+
+新建用户
+db.createUser(
+   {
+     user: &amp;quot;userName&amp;quot;,
+     pwd: &amp;quot;password&amp;quot;,
+     roles: [ { role: &amp;quot;userAdmin&amp;quot;, db">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb使用总结">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/mongodb使用总结/index.html">
 <meta property="og:site_name" content="Zihua!">
-<meta property="og:description" content="走吧！勇敢的走下去吧！">
+<meta property="og:description" content="Mongodb修改为密码登录
+无密码登录到mongodb
+
+mongo
+
+使用 admin这个数据库
+
+use admin
+
+新建用户
+db.createUser(
+   {
+     user: &amp;quot;userName&amp;quot;,
+     pwd: &amp;quot;password&amp;quot;,
+     roles: [ { role: &amp;quot;userAdmin&amp;quot;, db">
+<meta property="og:updated_time" content="2017-06-25T16:56:23.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zihua!">
-<meta name="twitter:description" content="走吧！勇敢的走下去吧！">
+<meta name="twitter:title" content="mongodb使用总结">
+<meta name="twitter:description" content="Mongodb修改为密码登录
+无密码登录到mongodb
+
+mongo
+
+使用 admin这个数据库
+
+use admin
+
+新建用户
+db.createUser(
+   {
+     user: &amp;quot;userName&amp;quot;,
+     pwd: &amp;quot;password&amp;quot;,
+     roles: [ { role: &amp;quot;userAdmin&amp;quot;, db">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +98,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 学习 | Zihua!</title>
+<title>mongodb使用总结 | Zihua!</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +108,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -261,56 +304,190 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-mongodb使用总结" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/03/18/Markdown语法入门/" class="archive-article-date">
-      <time datetime="2017-03-18T13:57:54.000Z" itemprop="datePublished">03-18</time>
+    <div class="article-meta">
+      <a href="/2017/06/26/mongodb使用总结/" class="article-date">
+      <time datetime="2017-06-25T16:37:08.000Z" itemprop="datePublished">2017-06-26</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/18/Markdown语法入门/">Markdown语法入门</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mongodb使用总结
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
-    </div>
-
-        </div>
+        
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Mongodb修改为密码登录"><a href="#Mongodb修改为密码登录" class="headerlink" title="Mongodb修改为密码登录"></a>Mongodb修改为密码登录</h3><ol>
+<li>无密码登录到mongodb</li>
+</ol>
+<pre><code>mongo
+</code></pre><ol>
+<li>使用 admin这个数据库</li>
+</ol>
+<pre><code>use admin
+</code></pre><ol>
+<li><p>新建用户</p>
+<pre><code>db.createUser(
+   {
+     user: &quot;userName&quot;,
+     pwd: &quot;password&quot;,
+     roles: [ { role: &quot;userAdmin&quot;, db: &quot;admin&quot; } ]
+   }
+)
+</code></pre></li>
+<li><p>停止 mongodb</p>
+</li>
+</ol>
+<pre><code>sudo service mongod stop
+</code></pre><ol>
+<li>启动验证登录</li>
+</ol>
+<pre><code>sudo mongod --auth
+</code></pre><ol>
+<li>重启　</li>
+</ol>
+<pre><code>sudo service mongod start
+</code></pre><ol>
+<li>密码登录到 mongodb</li>
+</ol>
+<pre><code>mongo --port 27017 -u &quot;userName&quot; -p &quot;password&quot; --authenticationDatabase &quot;admin&quot;
+</code></pre><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>userName,password 为你想要添加的用户名以及密码，并且指定了数据库 admin ,拥有权限: userAdmin</li>
+</ul>
+<ol>
+<li>数据库用户角色：read、readWrite;  </li>
+<li>数据库管理角色：dbAdmin、dbOwner、userAdmin；       </li>
+<li>集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；</li>
+<li>备份恢复角色：backup、restore；</li>
+<li>所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase</li>
+<li>超级用户角色：root<br>// 这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase）</li>
+<li>内部角色：__system</li>
+</ol>
+
+      
+    </div>
+    
   </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/17/编译原理研讨/">
+                    编译原理研讨
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mongodb修改为密码登录"><span class="toc-number">1.</span> <span class="toc-text">Mongodb修改为密码登录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#说明"><span class="toc-number"></span> <span class="toc-text">说明</span></a>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-1 i,
+        .toc-level-1 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"mongodb使用总结　| Zihua!　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/17/编译原理研讨/" title="Next: 编译原理研讨">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/mongodb使用总结/">mongodb使用总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/17/编译原理研讨/">编译原理研讨</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/17/体系结构期末笔记/">体系结构期末笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/15/单机文件系统之Linux文件系统/">单机文件系统之Linux文件系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/13/编译原理实验二/">编译原理实验二</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/22/google浏览器插件开发入门/">英语学习小工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/18/Markdown语法入门/">Markdown语法入门</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/17/从此走上文艺道路！/">从此走上文艺道路！</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
