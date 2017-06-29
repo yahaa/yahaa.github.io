@@ -300,8 +300,33 @@
         <h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><ol>
 <li>curl -sSL <a href="http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet" target="_blank" rel="external">http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet</a> | sh -</li>
 <li>非root用户使用docker sudo usermod -aG docker userName</li>
+<li>重启电脑</li>
 </ol>
-<h3 id="docker-中mongodb-授权"><a href="#docker-中mongodb-授权" class="headerlink" title="docker 中mongodb 授权"></a>docker 中mongodb 授权</h3><ul>
+<h3 id="在docker中部署mongodb"><a href="#在docker中部署mongodb" class="headerlink" title="在docker中部署mongodb"></a>在docker中部署mongodb</h3><ul>
+<li>docker run –name mongo3 -p 27018:27017 -d -v /home/yahaa/dockerdata:/data/db mongo –auth</li>
+</ul>
+<pre><code>解释：
+    --name mongo3 指定容器名字为　mongo3
+    -p 27018:27017 指定本机端口27018和容器端口27018绑定
+    -d 在后台中运行
+    -v 把本地的　/home/yahaa/dockerdata挂载到　/data/db
+    mongo 表示自动拉取的镜像
+    --auth 表示开启授权
+</code></pre><ul>
+<li>docker exec -it mongo3 mongo admin</li>
+</ul>
+<pre><code>解释：
+    终端进入容器　mongo3 并且执行容器中的命令　mongo admin
+</code></pre><ul>
+<li>然后创建一个user administrator:</li>
+</ul>
+<pre><code>db.createUser({
+    user:&quot;zihua&quot;,
+    pwd:&quot;123456789987654321&quot;, roles:[{role:&quot;userAdminAnyDatabase&quot;,                    db:&quot;admin&quot;}
+    ]}
+);
+</code></pre><ul>
+<li>详情参考下面博文<h4 id="docker-中mongodb-授权"><a href="#docker-中mongodb-授权" class="headerlink" title="docker 中mongodb 授权"></a>docker 中mongodb 授权</h4></li>
 <li><a href="https://blog.igevin.info/posts/docker-mongo-auth/" target="_blank" rel="external">参考博客</a></li>
 </ul>
 <h3 id="本地连接到阿里云mongodb"><a href="#本地连接到阿里云mongodb" class="headerlink" title="本地连接到阿里云mongodb"></a>本地连接到阿里云mongodb</h3><pre><code>//连接MongoDB并指定端口
