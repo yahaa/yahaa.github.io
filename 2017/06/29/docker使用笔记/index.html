@@ -17,20 +17,35 @@
 
 <meta name="description" content="安装docker
 curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet | sh -
-非root用户使用docker sudo usermod -aG docker userName">
+非root用户使用docker sudo usermod -aG docker userName
+
+docker 中mongodb 授权
+参考博客
+
+本地连接到阿里云mongodb//连接Mon">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker使用笔记">
 <meta property="og:url" content="http://yoursite.com/2017/06/29/docker使用笔记/index.html">
 <meta property="og:site_name" content="Zihua!">
 <meta property="og:description" content="安装docker
 curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet | sh -
-非root用户使用docker sudo usermod -aG docker userName">
-<meta property="og:updated_time" content="2017-06-29T13:11:36.240Z">
+非root用户使用docker sudo usermod -aG docker userName
+
+docker 中mongodb 授权
+参考博客
+
+本地连接到阿里云mongodb//连接Mon">
+<meta property="og:updated_time" content="2017-06-29T16:38:54.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker使用笔记">
 <meta name="twitter:description" content="安装docker
 curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet | sh -
-非root用户使用docker sudo usermod -aG docker userName">
+非root用户使用docker sudo usermod -aG docker userName
+
+docker 中mongodb 授权
+参考博客
+
+本地连接到阿里云mongodb//连接Mon">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -308,7 +323,21 @@ curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/in
 <li>curl -sSL <a href="http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet" target="_blank" rel="external">http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet</a> | sh -</li>
 <li>非root用户使用docker sudo usermod -aG docker userName</li>
 </ol>
+<h3 id="docker-中mongodb-授权"><a href="#docker-中mongodb-授权" class="headerlink" title="docker 中mongodb 授权"></a>docker 中mongodb 授权</h3><ul>
+<li><a href="https://blog.igevin.info/posts/docker-mongo-auth/" target="_blank" rel="external">参考博客</a></li>
+</ul>
+<h3 id="本地连接到阿里云mongodb"><a href="#本地连接到阿里云mongodb" class="headerlink" title="本地连接到阿里云mongodb"></a>本地连接到阿里云mongodb</h3><pre><code>//连接MongoDB并指定端口
 
+mongo 192.168.1.100:27017
+
+//连接到指定的MongoDB数据库
+
+mongo 192.168.1.100:27017/test
+
+//指定用户名和密码连接到指定的MongoDB数据库
+
+mongo 192.168.1.200:27017/test -u user -p password
+</code></pre>
       
     </div>
     
@@ -334,7 +363,7 @@ curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/in
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装docker"><span class="toc-number">1.</span> <span class="toc-text">安装docker</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装docker"><span class="toc-number">1.</span> <span class="toc-text">安装docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-中mongodb-授权"><span class="toc-number">2.</span> <span class="toc-text">docker 中mongodb 授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地连接到阿里云mongodb"><span class="toc-number">3.</span> <span class="toc-text">本地连接到阿里云mongodb</span></a></li></ol>
         
     </div>
     <style>

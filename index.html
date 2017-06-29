@@ -301,7 +301,21 @@
 <li>curl -sSL <a href="http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet" target="_blank" rel="external">http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/intranet</a> | sh -</li>
 <li>非root用户使用docker sudo usermod -aG docker userName</li>
 </ol>
+<h3 id="docker-中mongodb-授权"><a href="#docker-中mongodb-授权" class="headerlink" title="docker 中mongodb 授权"></a>docker 中mongodb 授权</h3><ul>
+<li><a href="https://blog.igevin.info/posts/docker-mongo-auth/" target="_blank" rel="external">参考博客</a></li>
+</ul>
+<h3 id="本地连接到阿里云mongodb"><a href="#本地连接到阿里云mongodb" class="headerlink" title="本地连接到阿里云mongodb"></a>本地连接到阿里云mongodb</h3><pre><code>//连接MongoDB并指定端口
 
+mongo 192.168.1.100:27017
+
+//连接到指定的MongoDB数据库
+
+mongo 192.168.1.100:27017/test
+
+//指定用户名和密码连接到指定的MongoDB数据库
+
+mongo 192.168.1.200:27017/test -u user -p password
+</code></pre>
       
     </div>
     
@@ -883,7 +897,7 @@ if __name__ == &apos;__main__&apos;:
 
       
         <p class="article-more-link">
-          <a href="/2017/04/13/编译原理实验二/#more">阅读全文 >></a>
+          <a href="/2017/04/13/编译原理实验二/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -947,7 +961,7 @@ if __name__ == &apos;__main__&apos;:
 
       
         <p class="article-more-link">
-          <a href="/2017/03/22/google浏览器插件开发入门/#more">阅读全文 >></a>
+          <a href="/2017/03/22/google浏览器插件开发入门/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -1012,7 +1026,7 @@ if __name__ == &apos;__main__&apos;:
 
       
         <p class="article-more-link">
-          <a href="/2017/03/18/Markdown语法入门/#more">阅读全文 >></a>
+          <a href="/2017/03/18/Markdown语法入门/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
